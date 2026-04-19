@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 6</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./Style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+<!-- Barra de navegacion -->
+<nav class="navbar navbar-expand-lg navbar-dark barranavegacion sticky-top">
+    <div class="container">
+        <a class="navbar-brand marca" href="#">
+            <i class="bi bi-controller me-2"></i>GameVerse<span class="tituloss">Fest</span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMain">
+            <ul class="navbar-nav mx-auto gap-1">
+                <li class="nav-item"><a class="nav-link" href="#info">Información</a></li>
+                <li class="nav-item"><a class="nav-link" href="#secciones">Categorías</a></li>
+                <li class="nav-item"><a class="nav-link" href="#footer">Contacto</a></li>
+            </ul>
+            <form class="d-flex gap-2" role="search">
+                <input class="form-control form-control-sm campobusqueda" type="search" placeholder="Buscar..." />
+                <button class="btn btn-sm botonprincipal" type="submit">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<!-- Carrusel -->
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="./Imagenes/carrusel/pexels-a-darmel-7862377.jpg" class="d-block w-100 imagencarrusel" alt="...">
+        </div>
+
+        <div class="carousel-item">
+            <img src="./Imagenes/carrusel/pexels-rdne-7915231.jpg" class="d-block w-100 imagencarrusel" alt="...">
+        </div>
+
+        <div class="carousel-item">
+            <img src="./Imagenes/carrusel/pexels-ron-lach-7856688.jpg" class="d-block w-100 imagencarrusel" alt="...">
+        </div>
+
+        <div class="carousel-item">
+            <img src="./Imagenes/carrusel/pexels-yankrukov-9072388.jpg" class="d-block w-100 imagencarrusel" alt="...">
+        </div>
+
+    </div>
+
+    <div class="carousel-caption titulocarrusel">
+        <p class="etiqueta">EVENTO 2026</p>
+        <h1 class="titulohero">Bienvenido a<br /><span class="tituloss">GameVerse Fest</span></h1>
+        <p class="subtitulohero">El festival de videojuegos más grande de Latinoamérica</p>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<!-- Informacion -->
+<section id="info" class="py-5 seccioninfo">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="etiquetaseccion">EL EVENTO</span>
+            <h2 class="titutloseccion">¿Qué es <span class="acento">GameVerse Fest</span>?</h2>
+            <p class="subtituloseccion col-lg-7 mx-auto">
+                El festival de videojuegos y cultura gamer más esperado del año. Tres días llenos de torneos, exhibiciones, cosplay, conferencias y experiencias únicas que no encontrarás en ningún otro lugar.
+            </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3 text-center">
+                <div class="cajaestadistica">
+                    <h3 class="numeroestadistica">50</h3>
+                    <p class="etiquetaestadistica">Lanzamientos</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="cajaestadistica">
+                    <h3 class="numeroestadistica">3</h3>
+                    <p class="etiquetaestadistica">Días de Evento</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="cajaestadistica">
+                    <h3 class="numeroestadistica">100+</h3>
+                    <p class="etiquetaestadistica">Expositores</p>
+                </div>
+            </div>
+            <div class="col-6 col-md-3 text-center">
+                <div class="cajaestadistica">
+                    <h3 class="numeroestadistica">$200K</h3>
+                    <p class="etiquetaestadistica">En Premios</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-2 align-items-center">
+            <div class="col-md-6">
+                <div class="detalleinfo p-4 rounded-3">
+                    <ul class="list-unstyled listainfo">
+                        <li><i class="bi bi-calendar-event acento me-2"></i><strong>Fecha:</strong> 15 – 17 de Agosto, 2025</li>
+                        <li><i class="bi bi-geo-alt acento me-2"></i><strong>Lugar:</strong> Corferias, Bogotá</li>
+                        <li><i class="bi bi-clock acento me-2"></i><strong>Horario:</strong> 10:00 AM – 10:00 PM</li>
+                        <li><i class="bi bi-ticket-perforated acento me-2"></i><strong>Entrada:</strong> Desde $30.000 COP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-md-start">
+                <p class="subtituloseccion">
+                    GameVerse Fest nació en 2018 con la misión de unir a la comunidad gamer hispanohablante en un espacio seguro, creativo y lleno de energía. Hoy somos el evento de referencia en Colombia y uno de los más importantes de la región.
+                </p>
+                <a href="#secciones" class="btn botoncontorno mt-2">Ver categorías <i class="bi bi-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Cards -->
+<section id="secciones" class="py-5 secciontarjetas">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="etiquetaseccion">CATEGORÍAS</span>
+            <h2 class="titutloseccion">¿Qué <span class="acento">Encontrarás</span>?</h2>
+        </div>
+        <div class="row g-4">
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-trophy-fill"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Torneos eSports</h5>
+                        <p class="card-text">Compite en League of Legends, Valorant, FIFA y más. Premios en efectivo para los mejores jugadores del torneo.</p>
+                        <span class="badge etiquetabadge">Competitivo</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Ver torneos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-headset"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Zona VR & Nueva Generacion</h5>
+                        <p class="card-text">Prueba las últimas consolas, juegos en realidad virtual y experiencias inmersivas antes de que lleguen al mercado.</p>
+                        <span class="badge etiquetabadge">Tecnología</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Explorar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-person-bounding-box"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cosplay</h5>
+                        <p class="card-text">Muestra tu traje y creatividad en el escenario principal. Categorías para principiantes y profesionales del cosplay.</p>
+                        <span class="badge etiquetabadge">Cultura</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Inscribirme</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-mic-fill"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Conferencias</h5>
+                        <p class="card-text">Desarrolladores, streamers y creadores de contenido compartiendo sus experiencias y el futuro de la industria.</p>
+                        <span class="badge etiquetabadge">Aprendizaje</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Ver agenda</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-bag-heart-fill"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Tiendas & Merch</h5>
+                        <p class="card-text">Figuras, ropa, accesorios y coleccionables exclusivos del evento y de tus franquicias favoritas en un solo lugar.</p>
+                        <span class="badge etiquetabadge">Coleccionables</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Ver tiendas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-4">
+                <div class="card tarjeta h-100 border-0">
+                    <div class="iconotarjeta"><i class="bi bi-camera-video-fill"></i></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Zona Streaming</h5>
+                        <p class="card-text">Conoce a tus streamers favoritos, participa en sus transmisiones en vivo y consigue ese ansiado autógrafo.</p>
+                        <span class="badge etiquetabadge">Comunidad</span>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <a href="#" class="btn btn-sm botoncontorno w-100">Conocer más</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Acordeon -->
+<section id="faq" class="py-5 seccionfaq">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="titutloseccion">Preguntas <span class="tituloss">Frecuentes</span></h2>
+        </div>
+        <div class="accordion d-flex flex-column gap-3" id="acordeonFaq">
+
+            <div class="accordion-item itemacordeon">
+                <h2 class="accordion-header">
+                    <button class="accordion-button botonacordeon" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#pregunta1"
+                        aria-expanded="true" aria-controls="pregunta1">
+¿El evento es apto para todo público?                    </button>
+                </h2>
+                <div id="pregunta1" class="accordion-collapse collapse show" data-bs-parent="#acordeonFaq">
+                    <div class="accordion-body cuerpoacordeon">
+                        <strong>Sí, Gameverse Fest está diseñado para gamers de todas las edades.</strong> Algunas zonas pueden tener restricciones de edad, pero en general hay actividades para todos los niveles y gustos.
+                </div>
+            </div>
+
+            <div class="accordion-item itemacordeon">
+                <h2 class="accordion-header">
+                    <button class="accordion-button botonacordeon collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#pregunta2"
+                        aria-expanded="false" aria-controls="pregunta2">
+                       ¿Cómo puedo comprar entradas para Gameverse Fest?
+                    </button>
+                </h2>
+                <div id="pregunta2" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+                    <div class="accordion-body cuerpoacordeon">
+                        Las entradas se pueden adquirir a través de <strong> la página oficial del evento. </strong> Se recomienda comprarlas con anticipación, ya que los cupos son limitados. </div>
+                </div>
+            </div>
+
+            <div class="accordion-item itemacordeon">
+                <h2 class="accordion-header">
+                    <button class="accordion-button botonacordeon collapsed" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#pregunta3"
+                        aria-expanded="false" aria-controls="pregunta3">
+¿Se podrán comprar productos dentro del evento?                    </button>
+                </h2>
+                <div id="pregunta3" class="accordion-collapse collapse" data-bs-parent="#acordeonFaq">
+                    <div class="accordion-body cuerpoacordeon">
+<strong> Claro,</strong>  habrá una zona comercial con tiendas de videojuegos, accesorios, figuras coleccionables y merch exclusiva de Gameverse Fest.                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="piepagina pt-5 pb-3">
+    <div class="container">
+        <div class="row g-4 mb-4">
+
+            <div class="col-md-4">
+                <h5 class="marca mb-3"><i class="bi bi-controller me-2"></i>GameVerse<span class="acento">Fest</span></h5>
+                <p class="text-muted small">El festival de gaming más grande de Latinoamérica. Únete a la comunidad y vive la experiencia.</p>
+                <div class="d-flex gap-3 mt-3">
+                    <a href="#" class="enlacesocial"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="enlacesocial"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="enlacesocial"><i class="bi bi-tiktok fs-5"></i></a>
+                    <a href="#" class="enlacesocial"><i class="bi bi-discord fs-5"></i></a>
+                    <a href="#" class="enlacesocial"><i class="bi bi-youtube fs-5"></i></a>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 offset-md-1">
+                <h6 class="text-uppercase fw-semibold mb-3 small titulopie">Evento</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="#" class="enlacepie">Información general</a></li>
+                    <li><a href="#" class="enlacepie">Torneos</a></li>
+                    <li><a href="#" class="enlacepie">Agenda</a></li>
+                    <li><a href="#" class="enlacepie">Expositores</a></li>
+                </ul>
+            </div>
+
+            <div class="col-6 col-md-2">
+                <h6 class="text-uppercase fw-semibold mb-3 small titulopie">Ayuda</h6>
+                <ul class="list-unstyled small">
+                    <li><a href="#faq" class="enlacepie">FAQ</a></li>
+                    <li><a href="#" class="enlacepie">Contacto</a></li>
+                    <li><a href="#" class="enlacepie">Términos</a></li>
+                    <li><a href="#" class="enlacepie">Privacidad</a></li>
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h6 class="text-uppercase fw-semibold mb-3 small titulopie">Te contactaremos!</h6>
+                <p class="small text-muted">Recibe novedades, descuentos y updates del evento.</p>
+                <div class="input-group input-group-sm">
+                    <input type="email" class="form-control campobusqueda" placeholder="tu@email.com" />
+                    <button class="btn botonprincipal" type="button"><i class="bi bi-send-fill"></i></button>
+                </div>
+            </div>
+    
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
