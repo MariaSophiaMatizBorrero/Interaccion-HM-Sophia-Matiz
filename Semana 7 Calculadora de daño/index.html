@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Daño</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; max-width: 400px; }
+    button { margin: 5px; padding: 8px 14px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1> Calculadora de Daño</h1>
+
+  <h3>Selecciona tu personaje:</h3>
+  <button id="btn-mago"> Mago</button>
+  <button id="btn-arquero"> Arquero</button>
+  <button id="btn-heroe"> Héroe</button>
+
+  <hr>
+
+  <p>Personaje: <strong id="nombre-personaje">Ninguno</strong></p>
+  <p>Vida del personaje: <strong id="vida-personaje">--</strong></p>
+  <p>Vida del monstruo: <strong id="vida-monstruo">--</strong></p>
+
+  <hr>
+
+  <button id="btn-atacar">⚔️ Atacar</button>
+  <button id="btn-contraataque"> Contraataque</button>
+
+  <p id="estado"></p>
+  <script src="script.js"></script>
+</body>
+</html>
