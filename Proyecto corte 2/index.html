@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tesla Navbar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="./Style/Style.css" />
+</head>
+<body>
+
+  <!-- barra de navegacion -->
+  <nav class="barranavegacion">
+
+    <a href="#" class="logomarca">
+      <img src="./IMG/navbar/Logo.png" alt="Tesla" class="imagenlogo" />
+    </a>
+
+    <ul class="listaenlaces">
+      <li><a href="#" class="enlace"><strong>Vehiculos</strong></a></li>
+      <li><a href="#" class="enlace"><strong>Energía</strong></a></li>
+      <li><a href="#" class="enlace"><strong>Carga</strong></a></li>
+      <li><a href="#" class="enlace"><strong>Descubrir</strong></a></li>
+      <li><a href="#" class="enlace"><strong>Tienda</strong></a></li>
+    </ul>
+
+    <ul class="listaiconos">
+      <li>
+        <a href="#" class="botonicono" aria-label="Ayuda">
+          <i class="bi bi-question-circle"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="botonicono" aria-label="Idioma">
+          <i class="bi bi-globe2"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="botonicono" aria-label="Cuenta">
+          <i class="bi bi-person-circle"></i>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+  <!-- carrusel portada -->
+  <section class="portada" id="portadaCarrusel">
+
+    <div class="diapositiva activa" style="background-image: url('./IMG/carrusel/ModelY.png');">
+      <div class="contenidodiapositiva">
+        <h1 class="titulodiapositiva">Model Y</h1>
+        <div class="grupobotones">
+          <a href="#" class="boton botonprincipal">Demo FSD (Supervisado)</a>
+          <a href="#" class="boton botonsecundario">Más Información</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="diapositiva" style="background-image: url('./IMG/carrusel/Model3.png');">
+      <div class="contenidodiapositiva">
+        <h1 class="titulodiapositiva">Model 3</h1>
+        <div class="grupobotones">
+          <a href="#" class="boton botonprincipal">Pedir Ahora</a>
+          <a href="#" class="boton botonsecundario">Más Información</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="flechanavegacion flechaanterior" id="flechaAnterior" aria-label="Anterior">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="flechanavegacion flechasiguiente" id="flechaSiguiente" aria-label="Siguiente">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="indicadores" id="indicadores"></div>
+
+  </section>
+
+  <!-- carrusel tarjetas vehiculos -->
+  <section class="secciontarjetas">
+
+    <div class="pisatatarjetas" id="pisaTarjetas">
+
+      <div class="tarjeta">
+        <img src="./IMG/cards carrusel/ModelYcard.png" alt="Model Y" class="imagentarjeta" />
+        <div class="contenidotarjeta">
+          <span class="subtitulotarjeta">SUV mediana</span>
+          <h2 class="titulotarjeta">Model Y</h2>
+          <div class="botonestarjeta">
+            <a href="#" class="boton botonprincipal">Ordenar</a>
+            <a href="#" class="boton botonsecundario">Más Información</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <img src="./IMG/cards carrusel/Model3card.png" alt="Model 3" class="imagentarjeta" />
+        <div class="contenidotarjeta">
+          <span class="subtitulotarjeta">Sedán deportivo</span>
+          <h2 class="titulotarjeta">Model 3</h2>
+          <div class="botonestarjeta">
+            <a href="#" class="boton botonprincipal">Ordenar</a>
+            <a href="#" class="boton botonsecundario">Más Información</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <img src="./IMG/cards carrusel/ModelScard.avif" alt="Model S" class="imagentarjeta" />
+        <div class="contenidotarjeta">
+          <span class="subtitulotarjeta">Sedán de lujo</span>
+          <h2 class="titulotarjeta">Model S</h2>
+          <div class="botonestarjeta">
+            <a href="#" class="boton botonsecundario">Más Información</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <img src="./IMG/cards carrusel/ModelXcard.avif" alt="Model X" class="imagentarjeta" />
+        <div class="contenidotarjeta">
+          <span class="subtitulotarjeta">SUV de lujo</span>
+          <h2 class="titulotarjeta">Model X</h2>
+          <div class="botonestarjeta">
+            <a href="#" class="boton botonsecundario">Más Información</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarjeta">
+        <img src="./IMG/cards carrusel/CamionCard.png" alt="Camion de trabajo" class="imagentarjeta" />
+        <div class="contenidotarjeta">
+          <span class="subtitulotarjeta">Camión de trabajo</span>
+          <h2 class="titulotarjeta">Cybertruck</h2>
+          <div class="botonestarjeta">
+            <a href="#" class="boton botonsecundario">Más Información</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="flechatarjeta flechatarjetaanterior oculta" id="flechaTarjetaAnterior" aria-label="Vehículo anterior">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="flechatarjeta flechatarjetasiguiente" id="flechaTarjetaSiguiente" aria-label="Siguiente vehículo">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+
+    <div class="indicadorestarjetas" id="indicadoresTarjetas"></div>
+
+  </section>
+
+  <!-- ── Seccion cards informativas ── -->
+  <section class="seccioncards">
+    <div class="filacards">
+
+      <!-- Card Carga -->
+      <div class="cardinfo" id="cardCarga">
+        <div class="cardinfoccontenido">
+          <h2 class="cardinfoTitulo">Carga</h2>
+          <p class="cardinfoSubtitulo">Encuentra la solución de carga perfecta.</p>
+          <button class="cardinfoBoton" onclick="manejarClickCard('carga')">Explorar carga</button>
+        </div>
+        <div class="cardinfoimagen">
+          <img src="./IMG/footer/cargador.png" alt="Tesla Wall Connector" class="imagenCargador" />
+        </div>
+      </div>
+
+      <!-- Card Experiencia -->
+      <div class="cardinfo cardinfoDesborde" id="cardExperiencia">
+        <div class="cardinfoccontenido">
+          <h2 class="cardinfoTitulo">Vive la experiencia Tesla</h2>
+          <p class="cardinfoSubtitulo">Agenda una prueba de manejo.</p>
+          <button class="cardinfoBoton" onclick="manejarClickCard('prueba')">Prueba de manejo</button>
+        </div>
+        <div class="cardinfoimagen cardinfoImagenAuto">
+          <img src="./IMG/footer/auto.png" alt="Tesla Model 3" class="imagenAuto" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="piepagina">
+    <div class="piepaginaContenido">
+      <span class="piepaginaCopyright">Tesla &copy; 2026</span>
+      <nav class="piepaginaEnlaces" aria-label="Enlaces legales">
+        <a href="https://www.tesla.com/es_co" class="piepaginaEnlace">Privacidad y legal</a>
+        <a href="#" class="piepaginaEnlace">Contacto</a>
+        <a href="#" class="piepaginaEnlace">Ubicaciones</a>
+        <a href="#" class="piepaginaEnlace">PQRS</a>
+      </nav>
+      <a href="https://www.sic.gov.co" target="_blank" rel="noopener" class="piepaginaLogoSic" aria-label="Superintendencia de Industria y Comercio">
+        <img src="./IMG/footer/IYC.png" alt="Superintendencia de Industria y Comercio" class="imagenSic" />
+      </a>
+    </div>
+  </footer>
+
+  <script src="./main/main.js" type="module"></script>
+
+</body>
+</html>
