@@ -1,0 +1,325 @@
+/* VARIABLES */
+:root {
+  --colorFondo:      #0c0c0f;
+  --colorTexto:      #f0ede8;
+  --colorTextoSuave: rgba(240, 237, 232, 0.5);
+  --colorBorde:      rgba(255, 255, 255, 0.08);
+  --colorAcento:     #e8c87a;
+  --colorAcento2:    #c47aff;
+
+  --fuenteDisplay: 'Georgia', 'Times New Roman', serif;
+  --fuenteCuerpo:  'Trebuchet MS', sans-serif;
+  --fuenteMono:    'Courier New', monospace;
+}
+
+
+/* RESET Y BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--colorFondo);
+  color: var(--colorTexto);
+  font-family: var(--fuenteCuerpo);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+
+/* CANVAS FONDO */
+#canvasFondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+/* HERO */
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 2rem 4rem clamp(2rem, 8vw, 10rem);
+}
+
+.etiquetaHero {
+  font-family: var(--fuenteMono);
+  font-size: 0.72rem;
+  color: var(--colorAcento);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.tituloHero {
+  font-family: var(--fuenteDisplay);
+  font-size: clamp(4rem, 12vw, 11rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.tituloHero em {
+  font-style: italic;
+  color: var(--colorAcento);
+  display: block;
+}
+
+.subtituloHero {
+  font-size: 1rem;
+  color: var(--colorTextoSuave);
+  max-width: 36ch;
+  margin-bottom: 2rem;
+}
+
+.btnExplorar {
+  display: inline-block;
+  color: var(--colorTexto);
+  font-family: var(--fuenteMono);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-bottom: 1px solid var(--colorAcento);
+  padding-bottom: 4px;
+}
+
+.heroIndicador {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 100px;
+  background: var(--colorBorde);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.indicadorBarra {
+  width: 100%;
+  height: 0%;
+  background: var(--colorAcento);
+  border-radius: 2px;
+  transition: height 0.1s linear;
+}
+
+
+/* GALERIA */
+.galeria {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.galeriaEncabezado {
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--colorBorde);
+  padding-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.tituloSeccion {
+  font-family: var(--fuenteDisplay);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Tarjeta de obra */
+.obraTarjeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+  border-bottom: 1px solid var(--colorBorde);
+}
+
+.obraTarjeta:last-child {
+  border-bottom: none;
+}
+
+.obraInvertida {
+  direction: rtl;
+}
+
+.obraInvertida > * {
+  direction: ltr;
+}
+
+@media (max-width: 700px) {
+  .obraTarjeta { grid-template-columns: 1fr; }
+  .obraInvertida { direction: ltr; }
+}
+
+/* Canvas de la obra */
+.obraCanvasWrap {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--colorBorde);
+  background: #080810;
+  aspect-ratio: 4 / 3;
+}
+
+.obraCanvasWrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.obraNum {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-family: var(--fuenteMono);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.1em;
+  z-index: 5;
+}
+
+.obraHint {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.55);
+  font-family: var(--fuenteMono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Texto de la obra */
+.obraTitulo {
+  font-family: var(--fuenteDisplay);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.obraDesc {
+  font-size: 0.95rem;
+  color: var(--colorTextoSuave);
+  line-height: 1.8;
+  max-width: 42ch;
+  margin-bottom: 1.5rem;
+}
+
+.obraMeta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--fuenteMono);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 0.06em;
+  border-top: 1px solid var(--colorBorde);
+  padding-top: 1rem;
+}
+
+.obraAnio {
+  color: var(--colorAcento);
+}
+
+/* Mensaje raycasting */
+.raycastMensaje {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(232, 200, 122, 0.12);
+  border: 1px solid rgba(232, 200, 122, 0.3);
+  color: var(--colorAcento);
+  font-family: var(--fuenteMono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+/* MANIFIESTO */
+.manifiesto {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--colorBorde);
+}
+
+.manifiestoContenido {
+  max-width: 680px;
+  text-align: center;
+}
+
+.citaGrande {
+  font-family: var(--fuenteDisplay);
+  font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--colorTexto);
+}
+
+.citaGrande cite {
+  display: block;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--colorAcento);
+  font-family: var(--fuenteMono);
+  letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+}
+
+/* FOOTER */
+.pie {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--colorBorde);
+}
+
+.pieMarca {
+  font-family: var(--fuenteDisplay);
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.pieCredito {
+  font-family: var(--fuenteMono);
+  font-size: 0.7rem;
+  color: var(--colorTextoSuave);
+  letter-spacing: 0.1em;
+}

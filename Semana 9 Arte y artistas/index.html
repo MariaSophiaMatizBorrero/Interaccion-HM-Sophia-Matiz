@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte en Movimiento</title>
+  <link rel="stylesheet" href="./style/style.css">
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Fondo 3D de particulas -->
+  <canvas id="canvasFondo"></canvas>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="heroContenido">
+      <p class="etiquetaHero">Galeria Interactiva · Three.js</p>
+      <h1 class="tituloHero">Arte<br><em>en el espacio</em></h1>
+      <p class="subtituloHero">Mueve el cursor. Haz scroll. Toca los objetos.</p>
+      <a href="#galeria" class="btnExplorar">Explorar obras ↓</a>
+    </div>
+    <div class="heroIndicador">
+      <div class="indicadorBarra" id="indicadorScroll"></div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="galeria" id="galeria">
+
+    <div class="galeriaEncabezado">
+      <h2 class="tituloSeccion">La coleccion</h2>
+    </div>
+
+    <!-- Obra 1: mousemove -->
+    <article class="obraTarjeta" id="obra1">
+      <div class="obraCanvasWrap">
+        <span class="obraNum">01</span>
+        <canvas id="canvasObra1"></canvas>
+        <div class="obraHint">Mueve el cursor sobre la obra</div>
+      </div>
+      <div class="obraTexto">
+        <h3 class="obraTitulo">Constelacion de Formas</h3>
+        <p class="obraDesc">
+          Esferas metalicas orbitando en el vacio. La luz las define,
+          el movimiento las transforma. Pasa el cursor y observa
+          como el espacio responde a tu presencia.
+        </p>
+        <div class="obraMeta">
+          <span>mousemove · lerp · camara</span>
+          <span class="obraAnio">2026</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Obra 2: scroll -->
+    <article class="obraTarjeta obraInvertida" id="obra2">
+      <div class="obraCanvasWrap">
+        <span class="obraNum">02</span>
+        <canvas id="canvasObra2"></canvas>
+        <div class="obraHint">Desplazate por la pagina</div>
+      </div>
+      <div class="obraTexto">
+        <h3 class="obraTitulo">Tiempo Detenido</h3>
+        <p class="obraDesc">
+          Tu scroll se convierte en tiempo. Cada pixel
+          desplazado revela una nueva faceta del toroide.
+          La forma solo existe en su totalidad si te mueves.
+        </p>
+        <div class="obraMeta">
+          <span>scroll · rotacion · lerp</span>
+          <span class="obraAnio">2026</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Obra 3: Cristales -->
+    <article class="obraTarjeta" id="obra3">
+      <div class="obraCanvasWrap">
+        <span class="obraNum">03</span>
+        <canvas id="canvasObra3"></canvas>
+        <div class="raycastMensaje" id="raycastMsg">Haz click sobre un cristal</div>
+      </div>
+      <div class="obraTexto">
+        <h3 class="obraTitulo">Cristales Interactivos</h3>
+        <p class="obraDesc">
+          Cada cristal contiene un color diferente esperando ser
+          liberado. Haz click para revelar su identidad luminosa.
+        </p>
+        <div class="obraMeta">
+          <span>Raycaster · click · hover</span>
+          <span class="obraAnio">2026</span>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Cita -->
+  <section class="manifiesto">
+    <div class="manifiestoContenido">
+      <blockquote class="citaGrande">
+        "El arte no imita la vida. La vida imita al arte."
+        <cite>— Oscar Wilde</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pie">
+    <p class="pieMarca">Arte en Movimiento</p>
+    <p class="pieCredito">Construido con Three.js por Sophia Matiz</p>
+  </footer>
+
+  <script type="module" src="./main/main.js"></script>
+</body>
+</html>
