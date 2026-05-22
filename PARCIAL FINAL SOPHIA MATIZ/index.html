@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FarmaVida | Tu farmacia de confianza</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <span class="navbar_logo_icono">✚</span> FarmaVida
+      </div>
+
+      <ul class="navbar_links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+      </ul>
+
+      <button class="navbar_carrito" @click="mostrar_carrito = !mostrar_carrito">
+        🛒
+        <span class="carrito_badge" v-if="total_items > 0">{{ total_items }}</span>
+      </button>
+    </nav>
+
+
+    <section class="hero" id="inicio">
+      <div class="hero_contenido">
+        <p class="hero_eyebrow">Salud que llega a tu puerta</p>
+        <h1 class="hero_titulo">Tu bienestar,<br/><em>nuestra misión</em></h1>
+        <p class="hero_subtitulo">Medicamentos, vitaminas y cuidado personal con entrega rápida.</p>
+        <a href="#catalogo" class="boton_primario">Ver productos</a>
+      </div>
+
+      <div class="hero_decoracion">
+        <div class="hero_circulo_grande"></div>
+        <div class="hero_circulo_chico"></div>
+        <span class="hero_emoji">💊</span>
+      </div>
+    </section>
+
+
+    <section class="catalogo" id="catalogo">
+      <div class="catalogo_encabezado">
+        <h2>Nuestros productos</h2>
+        <p>Calidad garantizada en cada compra</p>
+      </div>
+
+      <div class="filtros">
+        <button
+          v-for="cat in categorias"
+          :key="cat"
+          :class="['filtro_btn', { activo: categoria_activa === cat }]"
+          @click="categoria_activa = cat"
+        >
+          {{ cat }}
+        </button>
+      </div>
+
+      <div class="productos_grid">
+        <div
+          class="producto_card"
+          v-for="producto in productos_filtrados"
+          :key="producto.id"
+        >
+          <img class="producto_imagen" :src="producto.imagen" :alt="producto.nombre" />
+          <div class="producto_info">
+            <span class="producto_categoria">{{ producto.categoria }}</span>
+            <h3 class="producto_nombre">{{ producto.nombre }}</h3>
+            <p class="producto_descripcion">{{ producto.descripcion }}</p>
+            <div class="producto_footer">
+              <span class="producto_precio">${{ producto.precio.toLocaleString() }}</span>
+              <button class="boton_agregar" @click="agregar_al_carrito(producto)">
+                + Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="carrito_overlay" v-if="mostrar_carrito" @click.self="mostrar_carrito = false">
+      <div class="carrito_panel">
+
+        <div class="carrito_header">
+          <h2>Tu carrito</h2>
+          <button class="carrito_cerrar" @click="mostrar_carrito = false">✕</button>
+        </div>
+
+      
+        <div class="carrito_vacio" v-if="carrito.length === 0">
+          <span>🛒</span>
+          <p>Tu carrito está vacío</p>
+        </div>
+
+        <ul class="carrito_lista" v-else>
+          <li class="carrito_item" v-for="item in carrito" :key="item.id">
+            <img class="item_imagen" :src="item.imagen" :alt="item.nombre" />
+            <div class="item_info">
+              <p class="item_nombre">{{ item.nombre }}</p>
+              <p class="item_precio">${{ item.precio.toLocaleString() }}</p>
+            </div>
+            <div class="item_controles">
+              <button @click="cambiar_cantidad(item, -1)">−</button>
+              <span>{{ item.cantidad }}</span>
+              <button @click="cambiar_cantidad(item, 1)">+</button>
+            </div>
+          </li>
+        </ul>
+
+        <div class="carrito_total" v-if="carrito.length > 0">
+          <div class="total_fila">
+            <span>Total</span>
+            <strong>${{ total_precio.toLocaleString() }}</strong>
+          </div>
+          <button class="boton_comprar">Ir a pagar</button>
+        </div>
+
+      </div>
+    </div>
+    
+    <section class="hero" id="inicio">
+      <div class="hero_contenido">
+        <p class="hero_eyebrow"> Inicia Sesión y encontrarás la información</p>
+        <h1 class="hero_titulo"> Entregas a <br/><em> Domicilio</em></h1>
+        <p class="hero_subtitulo">Entregas rápidas y de calidad</p>
+        <input type="email" class="boton_primario" placeholder="tu@email.com" />
+      </div>
+
+      <div class="hero_decoracion">
+        <div class="hero_circulo_grande"></div>
+        <div class="hero_circulo_chico"></div>
+        <span class="hero_emoji">🚚</span>
+      
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="footer_contenido">
+        <div class="footer_marca">
+          <span class="navbar_logo_icono">✚</span> FarmaVida
+          <p>Salud y bienestar para toda la familia.</p>
+        </div>
+        <div class="footer_links">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Trabaja con nosotros</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+          </ul>
+        </div>
+        <div class="footer_links">
+          <h4>Ayuda</h4>
+          <ul>
+            <li><a href="#">Preguntas frecuentes</a></li>
+            <li><a href="#">Envíos y devoluciones</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script src="./vue.js"></script>
+
+</body>
+</html>
