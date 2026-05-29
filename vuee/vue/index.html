@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="bloc">
+ 
+      <div class="bloc__header">
+        <h1 class="bloc__titulo">To Do</h1>
+        <span class="bloc__contador">{{ tareas.length }} tareas</span>
+      </div>
+ 
+      <div class="bloc__entrada">
+        <input
+          class="bloc__input"
+          v-model="nueva"
+          @keyup.enter="agregar"
+          placeholder="nueva tarea..."
+          maxlength="120"
+        />
+        <button class="bloc__btn-agregar" @click="agregar" title="Agregar">+</button>
+      </div>
+ 
+      <ul class="bloc__lista">
+        <transition-group name="lista">
+          <li class="tarea" v-for="tarea in tareas" :key="tarea.id">
+            <div
+              class="tarea__check"
+              :class="{ 'tarea__check--hecho': tarea.hecho }"
+              @click="tarea.hecho = !tarea.hecho"
+            ></div>
+            <span
+              class="tarea__texto"
+              :class="{ 'tarea__texto--hecho': tarea.hecho }"
+            >{{ tarea.texto }}</span>
+            <button class="tarea__eliminar" @click="eliminar(tarea.id)" title="Eliminar">×</button>
+          </li>
+        </transition-group>
+      </ul>
+ 
+      <p class="bloc__vacio" v-if="tareas.length === 0">— sin tareas —</p>
+ 
+      <div class="bloc__pie">
+        <span class="bloc__pendientes">
+          {{ pendientes }} pendiente{{ pendientes !== 1 ? 's' : '' }}
+        </span>
+        <button
+          class="bloc__limpiar"
+          v-if="completadas > 0"
+          @click="limpiarCompletadas"
+        >
+          borrar completadas ({{ completadas }})
+        </button>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

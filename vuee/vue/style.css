@@ -1,0 +1,234 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+:root {
+  --fondo:  #f5f0e8;
+  --papel:  #fffdf7;
+  --tinta:  #1a1610;
+  --acento: #c84b2f;
+  --suave:  #d4ccbc;
+  --linea:  #e8e2d6;
+}
+ 
+body {
+  background: var(--fondo);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 16px;
+  font-family: 'DM Mono', monospace;
+}
+ 
+.bloc {
+  background: var(--papel);
+  width: 100%;
+  max-width: 480px;
+  border: 1.5px solid var(--suave);
+  box-shadow: 4px 4px 0 var(--suave);
+}
+ 
+.bloc__header {
+  padding: 28px 32px 20px;
+  border-bottom: 1.5px solid var(--linea);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+ 
+.bloc__titulo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: var(--tinta);
+  letter-spacing: -0.5px;
+}
+ 
+.bloc__contador {
+  font-size: 0.72rem;
+  color: var(--acento);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+ 
+.bloc__entrada {
+  display: flex;
+  border-bottom: 1.5px solid var(--linea);
+}
+ 
+.bloc__input {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  background: transparent;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.88rem;
+  color: var(--tinta);
+  outline: none;
+}
+ 
+.bloc__input::placeholder {
+  color: var(--suave);
+}
+ 
+.bloc__btn-agregar {
+  padding: 0 22px;
+  background: var(--tinta);
+  color: var(--papel);
+  border: none;
+  cursor: pointer;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.2rem;
+  transition: background 0.15s;
+}
+ 
+.bloc__btn-agregar:hover {
+  background: var(--acento);
+}
+ 
+/* ── Lista ── */
+.bloc__lista {
+  list-style: none;
+  min-height: 60px;
+}
+ 
+.tarea {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px 14px 24px;
+  border-bottom: 1px solid var(--linea);
+  gap: 14px;
+  transition: background 0.12s;
+}
+ 
+.tarea:last-child {
+  border-bottom: none;
+}
+ 
+.tarea:hover {
+  background: #faf6ee;
+}
+ 
+.tarea__check {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--suave);
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+ 
+.tarea__check:hover {
+  border-color: var(--acento);
+}
+ 
+.tarea__check--hecho {
+  border-color: var(--acento);
+  background: var(--acento);
+}
+ 
+.tarea__check--hecho::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 1.5px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+ 
+.tarea__texto {
+  flex: 1;
+  font-size: 0.88rem;
+  color: var(--tinta);
+  line-height: 1.4;
+  transition: color 0.15s;
+}
+ 
+.tarea__texto--hecho {
+  text-decoration: line-through;
+  color: var(--suave);
+}
+ 
+.tarea__eliminar {
+  background: none;
+  border: none;
+  color: var(--suave);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  transition: color 0.15s;
+  opacity: 0;
+}
+ 
+.tarea:hover .tarea__eliminar {
+  opacity: 1;
+}
+ 
+.tarea__eliminar:hover {
+  color: var(--acento);
+}
+ 
+.bloc__vacio {
+  padding: 40px 32px;
+  text-align: center;
+  color: var(--suave);
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+}
+ 
+.bloc__pie {
+  padding: 14px 24px;
+  border-top: 1.5px solid var(--linea);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+.bloc__pendientes {
+  font-size: 0.72rem;
+  color: var(--suave);
+  letter-spacing: 1px;
+}
+ 
+.bloc__limpiar {
+  background: none;
+  border: none;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--suave);
+  cursor: pointer;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  transition: color 0.15s;
+}
+ 
+.bloc__limpiar:hover {
+  color: var(--acento);
+}
+ 
+.lista-enter-active {
+  animation: entrar 0.2s ease;
+}
+ 
+.lista-leave-active {
+  animation: salir 0.18s ease forwards;
+}
+ 
+@keyframes entrar {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+ 
+@keyframes salir {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(8px); }
+}
